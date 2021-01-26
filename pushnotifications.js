@@ -2,13 +2,13 @@ let admin = require("firebase-admin")
 const express = require('express')
 const router = express.Router();
 const axios = require('axios')
-
+require('dotenv').config();
 
 
 const sendPushToEndpont = (title, body, receiver) =>{ 
     const headers = {
          'Content-Type': 'application/json',
-          Authorization: 'key=AIzaSyBaGyikYfnoo54Ak4prDdhLbhqXILkJjvY'
+          Authorization: `key=${process.env.KEY}`
     }
 
     let payload = {

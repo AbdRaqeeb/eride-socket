@@ -7,12 +7,13 @@ let io = require('socket.io')(http);
 const axios = require('axios');
 const mysql = require('mysql');
 const {Notify} = require('../pushnotifications');
+require('dotenv').config();
 
 
 
 let options = {
     url: 'https://easydispatch.ng/api/v1/user_balance',
-    json: { Authorization: 'd4ddd2cd8c8ff3acdcdce8fee0130c01' }
+    json: { Authorization: `${process.env.EASY_KEY}` }
 
 };
 let connection;
